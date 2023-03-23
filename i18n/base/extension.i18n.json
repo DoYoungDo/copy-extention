@@ -1,0 +1,6 @@
+{
+	"no.such.file.or.Directory": "没有这个文件或目录:{0}",
+	"not.dir": "不是一个目录",
+	"copy.done": "复制成功",
+	"copy.failed": "复制失败"
+}

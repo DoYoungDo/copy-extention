@@ -1,0 +1,12 @@
+{
+	"copy-directory-description": "复制绝对路径和目录结构",
+	"copy-directory-displayName": "复制绝对路径",
+	"copy.directory.structure": "复制目录结构",
+	"copy.file.or.directroy.path": "复制绝对路径",
+	"is.copy.hide.dir": "是否复制以 . 开头的目录？",
+	"is.copy.hide.file": "是否复制以 . 开头的文件？",
+	"item.connect.charactor": "节点链接符",
+	"sibling.item.connect.charactor": "同级项链接符（只取第一个字符）",
+	"tail.item.connect.charactor": "末尾项链接符",
+	"indent.lenght": "缩进长度（空格数量）"
+}

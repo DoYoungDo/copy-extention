@@ -1,0 +1,12 @@
+{
+	"copy-directory-description": "Copy the absolute path and directory structure",
+	"copy-directory-displayName": "Copy the absolute path",
+	"copy.directory.structure": "copy structure of directory",
+	"copy.file.or.directroy.path": "copy absolute path",
+	"is.copy.hide.dir": "copy directory start with . ?",
+	"is.copy.hide.file": "copy file start with . ?",
+	"item.connect.charactor": "item connect charactor",
+	"sibling.item.connect.charactor": "sibling item connect charactor(only get first char)",
+	"tail.item.connect.charactor": "tail item connect charactor",
+	"indent.lenght": "indent lenght(number of spaces)"
+}
