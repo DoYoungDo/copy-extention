@@ -82,8 +82,10 @@ function copy(dirPath) {
 
 	function getIndetText(indent) {
 		let text = "";
+		const fillCharactor = config.get("g.indent.fill.charactor").trim().charAt(0) || " ";
+
 		for (let i = 0; i < indent; ++i) {
-			text += " ";
+			text += fillCharactor;
 		}
 		return text.toString();
 	}

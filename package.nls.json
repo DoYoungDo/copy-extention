@@ -8,5 +8,6 @@
 	"item.connect.charactor": "节点链接符",
 	"sibling.item.connect.charactor": "同级项链接符（只取第一个字符）",
 	"tail.item.connect.charactor": "末尾项链接符",
-	"indent.lenght": "缩进长度（空格数量）"
+	"indent.lenght": "缩进长度（空格数量）",
+	"indent.fill.charactor": "缩进填充字符（默认为空格）"
 }

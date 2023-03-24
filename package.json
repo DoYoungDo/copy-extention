@@ -71,6 +71,11 @@
 					"type": "number",
 					"default": 4,
 					"description": "%indent.lenght%"
+				},
+				"g.indent.fill.charactor": {
+					"type": "string",
+					"default": " ",
+					"description": "%indent.fill.charactor%"
 				}
 			}
 		}

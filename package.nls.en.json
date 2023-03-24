@@ -8,5 +8,6 @@
 	"item.connect.charactor": "item connect charactor",
 	"sibling.item.connect.charactor": "sibling item connect charactor(only get first char)",
 	"tail.item.connect.charactor": "tail item connect charactor",
-	"indent.lenght": "indent lenght(number of spaces)"
+	"indent.lenght": "indent lenght(number of spaces)",
+	"indent.fill.charactor": "fill charactor indent(whitespace is default)"
 }
