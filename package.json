@@ -1,97 +1,104 @@
 {
-	"id": "copy-directory",
-	"name": "copy-directory",
-	"description": "%copy-directory-description%",
-	"displayName": "%copy-directory-displayName%",
-	"version": "1.0.0",
-	"engines": {
-		"HBuilderX": "^3.2.6"
-	},
-	"activationEvents": [
-		"onCommand:copy.directory.structure",
-		"onCommand:copy.file.or.directroy.path"
-	],
-	"main": "./dist/extension.js",
-	"contributes": {
-		"commands": [
-		{
-			"command": "copy.directory.structure",
-			"title": "%copy.directory.structure%"
-		},
-		{
-			"command": "copy.file.or.directroy.path",
-			"title": "%copy.file.or.directroy.path%"
-		}],
-		"menus": {
-			"explorer/context": [
-				{
-					"command": "copy.file.or.directroy.path",
-					"group": "rename",
-					"when": "explorerResourceCount == 1"
-				},
-				{
-					"command": "copy.directory.structure",
-					"group": "rename",
-					"when": "explorerResourceIsFolder"
-				}, {
-					"group": "rename"
-				}
+    "id": "copy-directory",
+    "name": "copy-directory",
+    "description": "%copy-directory-description%",
+    "displayName": "%copy-directory-displayName%",
+    "version": "1.2.0",
+    "engines": {
+        "HBuilderX": "^3.2.6"
+    },
+    "activationEvents": [
+        "onCommand:copy.directory.structure",
+        "onCommand:copy.file.or.directroy.path"
+    ],
+    "main": "./dist/extension.js",
+    "contributes": {
+        "commands": [{
+                "command": "copy.directory.structure",
+                "title": "%copy.directory.structure%"
+            },
+            {
+                "command": "copy.file.or.directroy.path",
+                "title": "%copy.file.or.directroy.path%"
+            }
+        ],
+        "menus": {
+            "explorer/context": [{
+                    "command": "copy.file.or.directroy.path",
+                    "group": "rename",
+                    "when": "explorerResourceCount == 1"
+                },
+                {
+                    "command": "copy.directory.structure",
+                    "group": "rename",
+                    "when": "explorerResourceIsFolder"
+                }, {
+                    "group": "rename"
+                }
 
-			]
-		},
-		"configuration": {
-			"title": "%copy.directory.structure%",
-			"properties": {
-				"a.is.copy.hide.dir": {
-					"type": "boolean",
-					"default": true,
-					"description": "%is.copy.hide.dir%"
-				},
-				"b.is.copy.hide.file": {
-					"type": "boolean",
-					"default": true,
-					"description": "%is.copy.hide.file%"
-				},
-				"c.item.connect.charactor": {
-					"type": "string",
-					"default": "├─",
-					"description": "%item.connect.charactor%"
-				},
-				"d.sibling.item.connect.charactor": {
-					"type": "string",
-					"default": "│",
-					"description": "%sibling.item.connect.charactor%"
-				},
-				"e.tail.item.connect.charactor": {
-					"type": "string",
-					"default": "└─",
-					"description": "%tail.item.connect.charactor%"
-				},
-				"f.indent.lenght": {
-					"type": "number",
-					"default": 4,
-					"description": "%indent.lenght%"
-				},
-				"g.indent.fill.charactor": {
-					"type": "string",
-					"default": " ",
-					"description": "%indent.fill.charactor%"
-				}
-			}
-		}
-	},
-	"scripts": {
-		"dev": "npm run webpack:dev",
-		"build": "npm run webpack:build",
-		"webpack:dev": "webpack -c webpack.dev.config.js",
-		"webpack:build": "webpack -c webpack.prod.config.js"
-	},
-	"devDependencies": {
-		"copy-webpack-plugin": "^10.2.4",
-		"hxnls-dev": "^4.0.1",
-		"webpack": "^5.72.0",
-		"webpack-cli": "^4.9.2",
-		"webpack-merge": "^5.8.0",
-		"webpack-nls-plugin": "^1.0.0"
-	}
+            ]
+        },
+        "configuration": {
+            "title": "%copy.directory.structure%",
+            "properties": {
+                "a.is.copy.hide.dir": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "%is.copy.hide.dir%"
+                },
+                "b.is.copy.hide.file": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "%is.copy.hide.file%"
+                },
+                "bb.dir.name.filter.reg": {
+                    "type": "string",
+                    "description": "%dir.name.filter.reg%"
+                },
+                "bb.file.name.filter.reg": {
+                    "type": "string",
+                    "description": "%file.name.filter.reg%"
+                },
+                "c.item.connect.charactor": {
+                    "type": "string",
+                    "default": "├─",
+                    "description": "%item.connect.charactor%"
+                },
+                "d.sibling.item.connect.charactor": {
+                    "type": "string",
+                    "default": "│",
+                    "description": "%sibling.item.connect.charactor%"
+                },
+                "e.tail.item.connect.charactor": {
+                    "type": "string",
+                    "default": "└─",
+                    "description": "%tail.item.connect.charactor%"
+                },
+                "f.indent.lenght": {
+                    "type": "number",
+                    "default": 4,
+                    "description": "%indent.lenght%"
+                },
+                "g.indent.fill.charactor": {
+                    "type": "string",
+                    "default": " ",
+                    "description": "%indent.fill.charactor%"
+                }
+            }
+        }
+    },
+    "scripts": {
+        "dev": "npm run webpack:dev",
+        "build": "npm run webpack:build",
+        "webpack:dev": "webpack -c webpack.dev.config.js",
+        "webpack:build": "webpack -c webpack.prod.config.js"
+    },
+    "devDependencies": {
+        "copy-webpack-plugin": "^10.2.4",
+        "hxnls-dev": "^4.0.1",
+        "webpack": "^5.72.0",
+        "webpack-cli": "^4.9.2",
+        "webpack-merge": "^5.8.0",
+        "webpack-nls-plugin": "^1.0.0"
+    }
 }
