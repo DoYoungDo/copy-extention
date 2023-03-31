@@ -1,6 +1,7 @@
 const hx = require('hbuilderx');
 const fs = require("fs");
 const path = require("path");
+// 导出国际化词条
 const {
     noSuchFOD,
     notDir,
@@ -19,6 +20,7 @@ function copy(dirPath) {
         return;
     }
 
+    // 获取配置项
     const config = hx.workspace.getConfiguration()
     const indent = config.get("f.indent.lenght");
     const copyHideDir = config.get("a.is.copy.hide.dir");
@@ -35,32 +37,43 @@ function copy(dirPath) {
     const char5 = getIndetText(indent);
     const dirFilter = config.get("bb.dir.name.filter.reg");
     const fileFilter = config.get("bb.file.name.filter.reg");
+    const ignoreEmptyDir = config.get("b.is.ignore.empty.dir");
 
+    // 递归遍历目录
     let text = readDirGetStructureText(dirPath, true, "");
+    // 去除开头的换行符
     text = text.startsWith("\n") ? text.slice(1) : text;
+    // 将组织的文本写入到剪切板
     hx.env.clipboard.writeText(text).then(() => {
         hx.window.setStatusBarMessage(copyDone, 1000, 'info');
     }).catch(() => {
         hx.window.setStatusBarMessage(copyFailed, 1000, 'error');
     });
 
+    /* 递归遍历函数 */
     function readDirGetStructureText(dir, isEndOfDir, prefix) {
         let text = "";
         const dirName = path.basename(dir);
 
+        // 忽略以.开头的目录
         if (!copyHideDir && dirName.startsWith(".")) {
             return text;
         }
+        // 正则匹配
         else if (dirFilter && dirFilter.trim() && !dirName.match(new RegExp(dirFilter.trim()))) {
             return text;
         }
+        // 追加目录项
         text += "\n";
-        text += prefix;
-        text += isEndOfDir ? char4 : char2;
-        text += dirName;
+        text += prefix; // 前缀（缩进填充）
+        text += isEndOfDir ? char4 : char2; // 连接符
+        text += dirName; // 目录名
 
+        // 获取所有子项
         const items = fs.readdirSync(dir);
+        // 遍历子项
         items.forEach((item, index) => {
+            // 忽略 . ..
             if (item === "." || item === "..") {
                 return;
             }
@@ -85,9 +98,18 @@ function copy(dirPath) {
                 text += readDirGetStructureText(itemPath, isEnd, newPrefix);
             }
         })
+
+        // 如果忽略空目录的话将目录名称也清空
+        if (ignoreEmptyDir) {
+            if (items.length === 0 || (items.length === 2 && items.includes(".") && items.includes(".."))) {
+                text = "";
+            }
+        }
+        // 返回组织的文本
         return text.toString();
     }
 
+    /* 获取缩进填充文本 */
     function getIndetText(indent) {
         let text = "";
         const fillCharactor = config.get("g.indent.fill.charactor").trim().charAt(0) || " ";

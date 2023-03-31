@@ -11,5 +11,6 @@
     "indent.lenght": "缩进长度（空格数量）",
     "indent.fill.charactor": "缩进填充字符（默认为空格）",
     "dir.name.filter.reg": "设置目录筛选正则表达式",
-    "file.name.filter.reg": "设置文件筛选正则表达式"
+    "file.name.filter.reg": "设置文件筛选正则表达式",
+    "is.ignore.empty.dir": "是否忽略空文件夹"
 }

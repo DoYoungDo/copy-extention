@@ -11,5 +11,6 @@
     "indent.lenght": "indent lenght(number of spaces)",
     "indent.fill.charactor": "fill charactor indent(whitespace is default)",
     "dir.name.filter.reg": "directory diltering regular expressions",
-    "file.name.filter.reg": "file diltering regular expressions"
+    "file.name.filter.reg": "file diltering regular expressions",
+    "is.ignore.empty.dir": "ignore empty driectory?"
 }
