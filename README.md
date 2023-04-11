@@ -1,4 +1,4 @@
-![](https://mp-b9e71787-b2f3-4676-bbfa-f4c5735dea01.cdn.bspapp.com/cloudstorage/2ba9921d-c265-4887-b6ca-b908bbed7488.png)
+![](https://mp-b9e71787-b2f3-4676-bbfa-f4c5735dea01.cdn.bspapp.com/cloudstorage/611432cf-8dcd-4bf6-ba8e-25a9160b4163.png)
 
 1. 右键复制绝对路径
 > 会将选择的文件或目录的绝对路径复制到剪切板，在需要使用的地方直接粘贴即可

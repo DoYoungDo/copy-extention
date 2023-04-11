@@ -12,5 +12,7 @@
     "indent.fill.charactor": "缩进填充字符（默认为空格）",
     "dir.name.filter.reg": "设置目录筛选正则表达式",
     "file.name.filter.reg": "设置文件筛选正则表达式",
-    "is.ignore.empty.dir": "是否忽略空文件夹"
+    "is.ignore.empty.dir": "是否忽略空文件夹",
+    "copy.file.or.directroy.full.name":"复制名称（文件/目录）",
+    "copy.file.name.without.extension.name":"复制文件名称（不带后缀名）"
 }

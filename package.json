@@ -9,7 +9,9 @@
     },
     "activationEvents": [
         "onCommand:copy.directory.structure",
-        "onCommand:copy.file.or.directroy.path"
+        "onCommand:copy.file.or.directroy.path",
+        "onCommand:copy.file.or.directroy.full.name",
+        "onCommand:copy.file.name.without.extension.name"
     ],
     "main": "./dist/extension.js",
     "contributes": {
@@ -20,10 +22,26 @@
             {
                 "command": "copy.file.or.directroy.path",
                 "title": "%copy.file.or.directroy.path%"
+            },
+            {
+                "command": "copy.file.or.directroy.full.name",
+                "title": "%copy.file.or.directroy.full.name%"
+            },
+            {
+                "command": "copy.file.name.without.extension.name",
+                "title": "%copy.file.name.without.extension.name%"
             }
         ],
         "menus": {
             "explorer/context": [{
+                    "command": "copy.file.or.directroy.full.name",
+                    "group": "rename",
+                    "when": "explorerResourceCount == 1"
+                }, {
+                    "command": "copy.file.name.without.extension.name",
+                    "group": "rename",
+                    "when": "explorerResourceCount == 1 && !explorerResourceIsFolder"
+                }, {
                     "command": "copy.file.or.directroy.path",
                     "group": "rename",
                     "when": "explorerResourceCount == 1"
@@ -31,7 +49,7 @@
                 {
                     "command": "copy.directory.structure",
                     "group": "rename",
-                    "when": "explorerResourceIsFolder"
+                    "when": "explorerResourceCount == 1 && explorerResourceIsFolder"
                 }, {
                     "group": "rename"
                 }
