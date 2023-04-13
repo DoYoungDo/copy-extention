@@ -14,5 +14,6 @@
     "file.name.filter.reg": "file diltering regular expressions",
     "is.ignore.empty.dir": "ignore empty driectory?",
     "copy.file.or.directroy.full.name":"copy (file/directory)",
-    "copy.file.name.without.extension.name":"copy file name (without extension name)"
+    "copy.file.name.without.extension.name":"copy file name (without extension name)",
+    "copy.file.or.directory.relative.path":"copy relative path"
 }

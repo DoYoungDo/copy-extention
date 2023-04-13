@@ -3,7 +3,7 @@
     "name": "copy-directory",
     "description": "%copy-directory-description%",
     "displayName": "%copy-directory-displayName%",
-    "version": "1.4.0",
+    "version": "1.5.0",
     "engines": {
         "HBuilderX": "^3.2.6"
     },
@@ -11,7 +11,8 @@
         "onCommand:copy.directory.structure",
         "onCommand:copy.file.or.directroy.path",
         "onCommand:copy.file.or.directroy.full.name",
-        "onCommand:copy.file.name.without.extension.name"
+        "onCommand:copy.file.name.without.extension.name",
+        "onCommand:copy.file.or.directory.relative.path"
     ],
     "main": "./dist/extension.js",
     "contributes": {
@@ -30,6 +31,10 @@
             {
                 "command": "copy.file.name.without.extension.name",
                 "title": "%copy.file.name.without.extension.name%"
+            },
+            {
+                "command": "copy.file.or.directory.relative.path",
+                "title": "%copy.file.or.directory.relative.path%"
             }
         ],
         "menus": {
@@ -41,6 +46,10 @@
                     "command": "copy.file.name.without.extension.name",
                     "group": "rename",
                     "when": "explorerResourceCount == 1 && !explorerResourceIsFolder"
+                },{
+                    "command": "copy.file.or.directory.relative.path",
+                    "group": "rename",
+                    "when": "explorerResourceCount == 1"
                 }, {
                     "command": "copy.file.or.directroy.path",
                     "group": "rename",
