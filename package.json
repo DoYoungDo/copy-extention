@@ -3,7 +3,7 @@
     "name": "copy-directory",
     "description": "%copy-directory-description%",
     "displayName": "%copy-directory-displayName%",
-    "version": "1.5.0",
+    "version": "1.6.0",
     "engines": {
         "HBuilderX": "^3.2.6"
     },
@@ -41,24 +41,24 @@
             "explorer/context": [{
                     "command": "copy.file.or.directroy.full.name",
                     "group": "rename",
-                    "when": "explorerResourceCount == 1"
+                    "when": "explorerResourceCount == 1 && config.h.show.menu.1 == 'true'"
                 }, {
                     "command": "copy.file.name.without.extension.name",
                     "group": "rename",
-                    "when": "explorerResourceCount == 1 && !explorerResourceIsFolder"
-                },{
+                    "when": "explorerResourceCount == 1 && !explorerResourceIsFolder && config.h.show.menu.2 == 'true'"
+                }, {
                     "command": "copy.file.or.directory.relative.path",
                     "group": "rename",
-                    "when": "explorerResourceCount == 1"
+                    "when": "explorerResourceCount == 1 && config.h.show.menu.3 == 'true'"
                 }, {
                     "command": "copy.file.or.directroy.path",
                     "group": "rename",
-                    "when": "explorerResourceCount == 1"
+                    "when": "explorerResourceCount == 1 && config.h.show.menu.4 == 'true'"
                 },
                 {
                     "command": "copy.directory.structure",
                     "group": "rename",
-                    "when": "explorerResourceCount == 1 && explorerResourceIsFolder"
+                    "when": "explorerResourceCount == 1 && explorerResourceIsFolder && config.h.show.menu.5 == 'true'"
                 }, {
                     "group": "rename"
                 }
@@ -115,6 +115,31 @@
                     "type": "string",
                     "default": " ",
                     "description": "%indent.fill.charactor%"
+                },
+                "h.show.menu.1": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "%show.menu.1%"
+                },
+                "h.show.menu.2": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "%show.menu.2%"
+                },
+                "h.show.menu.3": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "%show.menu.3%"
+                },
+                "h.show.menu.4": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "%show.menu.4%"
+                },
+                "h.show.menu.5": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "%show.menu.5%"
                 }
             }
         }

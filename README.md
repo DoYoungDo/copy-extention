@@ -21,4 +21,4 @@
 ```
 
 3. 在`设置`->`插件设置`->`复制目录结构`中可以进行一些相关设置
-![](https://mp-b9e71787-b2f3-4676-bbfa-f4c5735dea01.cdn.bspapp.com/cloudstorage/6cd274db-5039-402f-bf71-7a7d5f6b6786.png)
+![](https://mp-b9e71787-b2f3-4676-bbfa-f4c5735dea01.cdn.bspapp.com/cloudstorage/948a355e-b900-4f7d-83e5-129939451520.png)
