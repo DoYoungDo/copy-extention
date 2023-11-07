@@ -12,6 +12,12 @@ function copy(filePath) {
 		hx.window.setStatusBarMessage(noSuchFOD(filePath), 1000, 'error');
 		return;
 	}
+    const config = hx.workspace.getConfiguration()
+    const is = config.get("b.is.escape.backslashes");
+    if(is){
+        filePath = filePath.replace(/\\/g,"/");
+    }
+    
 	hx.env.clipboard.writeText(filePath).then(() => {
 		hx.window.setStatusBarMessage(copyDone, 1000, 'info');
 	});

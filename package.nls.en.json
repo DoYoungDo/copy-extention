@@ -20,5 +20,6 @@
     "show.menu.2": "Show【copy file name (without extension name)】menu",
     "show.menu.3": "Show【copy relative path】menu",
     "show.menu.4": "Show【copy absolute path】menu",
-    "show.menu.5": "Show【copy structure of directory】menu"
+    "show.menu.5": "Show【copy structure of directory】menu",
+    "b.is.escape.backslashes": "backslashes to slash ？"
 }

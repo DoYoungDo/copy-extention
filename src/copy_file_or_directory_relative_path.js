@@ -12,7 +12,14 @@ function copy(workspaceFolder, filePath) {
 		hx.window.setStatusBarMessage(noSuchFOD(filePath), 1000, 'error');
 		return;
 	}
-    const relativePath = path.relative(workspaceFolder.uri.fsPath,filePath);
+    let relativePath = path.relative(workspaceFolder.uri.fsPath,filePath);
+    
+    const config = hx.workspace.getConfiguration()
+    const is = config.get("b.is.escape.backslashes");
+    if(is){
+        relativePath = relativePath.replace(/\\/g,"/");
+    }
+    
 	hx.env.clipboard.writeText(relativePath).then(() => {
 		hx.window.setStatusBarMessage(copyDone, 1000, 'info');
 	});

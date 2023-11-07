@@ -3,7 +3,7 @@
     "name": "copy-directory",
     "description": "%copy-directory-description%",
     "displayName": "%copy-directory-displayName%",
-    "version": "1.6.1",
+    "version": "1.7.1",
     "engines": {
         "HBuilderX": "^3.2.6"
     },
@@ -82,6 +82,11 @@
                     "type": "boolean",
                     "default": false,
                     "description": "%is.ignore.empty.dir%"
+                },
+                "b.is.escape.backslashes": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "%b.is.escape.backslashes%"
                 },
                 "bb.dir.name.filter.reg": {
                     "type": "string",
