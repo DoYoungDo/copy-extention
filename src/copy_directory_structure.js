@@ -1,7 +1,7 @@
 const hx = require('hbuilderx');
 const fs = require("fs");
 const path = require("path");
-// 导出国际化词条
+// 导入国际化词条
 const {
     noSuchFOD,
     notDir,
