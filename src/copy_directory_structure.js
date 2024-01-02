@@ -38,9 +38,10 @@ function copy(dirPath) {
     const dirFilter = config.get("bb.dir.name.filter.reg");
     const fileFilter = config.get("bb.file.name.filter.reg");
     const ignoreEmptyDir = config.get("b.is.ignore.empty.dir");
+    const copyStructureLevel = Number(config.get("gg.copy.structure.level"));
 
     // 递归遍历目录
-    let text = readDirGetStructureText(dirPath, true, "");
+    let text = readDirGetStructureText(dirPath, true, "", 1);
     // 去除开头的换行符
     text = text.startsWith("\n") ? text.slice(1) : text;
     // 将组织的文本写入到剪切板
@@ -51,7 +52,7 @@ function copy(dirPath) {
     });
 
     /* 递归遍历函数 */
-    function readDirGetStructureText(dir, isEndOfDir, prefix) {
+    function readDirGetStructureText(dir, isEndOfDir, prefix, level) {
         let text = "";
         const dirName = path.basename(dir);
 
@@ -68,6 +69,11 @@ function copy(dirPath) {
         text += prefix; // 前缀（缩进填充）
         text += isEndOfDir ? char4 : char2; // 连接符
         text += dirName; // 目录名
+        
+        // 如果层级已经超过则不再继续复制
+        if(copyStructureLevel !== -1 && level >= copyStructureLevel){
+            return text;
+        }
 
         // 获取所有子项
         const items = fs.readdirSync(dir);
@@ -95,7 +101,7 @@ function copy(dirPath) {
                 text += item;
             }
             else {
-                text += readDirGetStructureText(itemPath, isEnd, newPrefix);
+                text += readDirGetStructureText(itemPath, isEnd, newPrefix, level + 1);
             }
         })
 
