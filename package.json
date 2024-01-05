@@ -3,7 +3,7 @@
     "name": "copy-directory",
     "description": "%copy-directory-description%",
     "displayName": "%copy-directory-displayName%",
-    "version": "1.8.1",
+    "version": "1.9.1",
     "engines": {
         "HBuilderX": "^3.2.6"
     },
@@ -125,6 +125,11 @@
                     "type": "string",
                     "default": "-1",
                     "description": "%copy.structure.level%"
+                },
+                "gg.dir.name.append.suffix": {
+                    "type": "string",
+                    "default": "",
+                    "description": "%dir.name.append.suffix%"
                 },
                 "h.show.menu.1": {
                     "type": "boolean",

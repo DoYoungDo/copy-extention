@@ -22,5 +22,6 @@
     "show.menu.4": "显示【复制绝对路径】菜单",
     "show.menu.5": "显示【复制目录结构】菜单",
     "b.is.escape.backslashes": "是否将反斜杠转为斜杠？",
-    "copy.structure.level": "目录结构拷贝层级"
+    "copy.structure.level": "目录结构拷贝层级",
+    "dir.name.append.suffix": "目录名称追加后缀"
 }

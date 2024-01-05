@@ -39,6 +39,7 @@ function copy(dirPath) {
     const fileFilter = config.get("bb.file.name.filter.reg");
     const ignoreEmptyDir = config.get("b.is.ignore.empty.dir");
     const copyStructureLevel = Number(config.get("gg.copy.structure.level"));
+    const dirSuffix = config.get("gg.dir.name.append.suffix");
 
     // 递归遍历目录
     let text = readDirGetStructureText(dirPath, true, "", 1);
@@ -69,6 +70,7 @@ function copy(dirPath) {
         text += prefix; // 前缀（缩进填充）
         text += isEndOfDir ? char4 : char2; // 连接符
         text += dirName; // 目录名
+        text += dirSuffix; // 目录名后缀
         
         // 如果层级已经超过则不再继续复制
         if(copyStructureLevel !== -1 && level >= copyStructureLevel){
